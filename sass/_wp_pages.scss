@@ -37,9 +37,9 @@
 
 .entry-title {
     
-  border-bottom: solid 5px desaturate($brand-primary, 5%);
-  padding: 10px 0;
-  color: $brand-primary;
+    background-color: desaturate( #224cb2, 10% );
+    padding: 10px 12px;
+    color: #ffffff;
   
   a {
     
@@ -59,7 +59,6 @@
 
 .breadcrumb-container {
   
-  background-color: $brand-gray;
   margin-top: -24px;
   padding-top: 1.5em;
   

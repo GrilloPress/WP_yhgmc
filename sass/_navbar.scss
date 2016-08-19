@@ -82,7 +82,7 @@
 
 #site-header {
   
-  background-color: $brand-primary;
+  background-color: white;
   
 }
 
@@ -102,13 +102,6 @@
   
 }
 
-.navbar-brand {
-  
-  padding: 22px 15px;
-  height: inherit;
-  
-}
-
 .navbar-toggle {
   
   float: left;
@@ -121,10 +114,15 @@
 
 .navbar-brand {
   
+  padding: 42px 15px;
+  height: inherit;
+  font-weight: 700;
+  
   @media screen and (max-width: $screen-xs) {
     
     font-size: 13px;
     line-height: 0px;
+    padding: 24px;
     
   }
 }

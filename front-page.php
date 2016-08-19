@@ -9,25 +9,18 @@
  *
  * @package sth
  * 
- * 
- * 
- * 
  */
 get_header(); ?>
 
-<section class="jumbotron" style="background-image: url('<?php echo CFS()->get( 'jumbotron_img' );?>')">
+<section class="jumbotron" style="background-image: url('https://almanac-electra.codio.io/wordpress/wp-content/themes/WP_yhgmc/images/YHGMC_header.png')">
    <div class="container">
-     
-     <h1><?php echo CFS()->get( 'jumbotron_title' );?></h1>
-     
-     <p>
-       <?php echo CFS()->get( 'jumbotron_subtitle' );?>
-     </p>
-     
-     <p>
-       <?php $jbo_link = CFS()->get( 'jumbotron_btn' );?>
-       <a class="btn btn-primary btn-lg" href="<?php echo $jbo_link["url"];?>" title="<?php echo $jbo_link["text"];?>" target="<?php echo $jbo_link["target"];?>" role="button"><?php echo $jbo_link["text"];?></a>
-     </p>
+     <div class="col-md-12">
+       <h1>Yorkshire &amp; Humber Genomic Medicine Centre</h1>
+       <p>
+         <a role="button" class="btn btn-warning">A link here</a>
+         <a role="button" class="btn btn-info">A link here</a>
+       </p>
+     </div>  
   </div>
 </section>
 
@@ -36,15 +29,15 @@ get_header(); ?>
     <div class="row">
       
       <?php
-      $featured_pages = array("one", "two", "three");
+      $featured_pages = array("one", "two", "three", "four");
       foreach ($featured_pages as $fp) { ;?>
       
       
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="page-feature-block">
           
           <?php $image_id = CFS()->get( 'feature_image_' . $fp );
-          echo wp_get_attachment_image( $image_id, 'thumbnail', "", array( "class" => "img-circle" ) );?>
+          echo wp_get_attachment_image( $image_id, 'thumbnail', "", array( "class" => "img-marketing" ) );?>
           
           <h4><?php echo CFS()->get('feature_title_' . $fp); ?></h4>
 

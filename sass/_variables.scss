@@ -14,11 +14,12 @@
 // $gray-light:             lighten($gray-base, 46.7%) // #777
 // $gray-lighter:           lighten($gray-base, 93.5%) // #eee
 
-$brand-primary:        #006db8; // #18bc9c; // #337ab7
-$brand-success:        #277691;
-$brand-info:           #007e5a;
-$brand-warning:        #6d1d61;
-$brand-danger:         #b61e53;
+$brand-primary:        #1d4ab7; // #18bc9c; // #337ab7
+$brand-success:        #146a6f;
+$brand-info:           #22adff;
+$brand-warning:        #ebc443;
+$brand-danger:         #f34a73;
+$brand-vibrant:        #c866f9; // bright purple pinky thing
 $brand-gray:           #f7f7f7;
 
 
@@ -378,7 +379,7 @@ $navbar-border-radius:             0;
 // $navbar-collapse-max-height:       340px
 
 $navbar-default-color:             white;
-$navbar-default-bg:                $brand-primary;
+$navbar-default-bg:                $brand-info;
 $navbar-default-border:            transparent;
 
 // Navbar links
