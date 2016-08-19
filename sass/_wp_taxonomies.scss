@@ -1,0 +1,13 @@
+.tag-list a {
+  
+  @extend .label;
+  background-color: lighten($brand-info, 5%);
+  
+    
+}
+
+.tags-links {
+  
+  margin: 5px 0;
+  
+}

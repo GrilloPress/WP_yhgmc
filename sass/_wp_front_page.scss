@@ -1,0 +1,28 @@
+.jumbotron {
+  
+  margin-top: -2em;
+  background-repeat: no-repeat;
+  background-position: 32% 0%;
+  background-size: cover;
+  
+  @media screen and (min-width: $screen-sm-min){
+    
+    padding-top: 100px;
+    
+  }
+  
+  h1 {
+    
+    font-weight: 400;
+    
+  }
+  
+}
+
+.img-marketing {
+  
+  width: 100%;
+  height: auto;
+  margin-bottom: 1em;
+  
+}

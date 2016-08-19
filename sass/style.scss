@@ -1,0 +1,25 @@
+/*
+Theme Name: WPSTHFT
+Theme URI: https://github.com/GrilloPress/WP_STHFT
+Description: Base WordPress template for STHFT
+Version: 0.1
+Author: Andrew Duckworth
+Author URI: https://github.com/GrilloPress
+*/
+@import "bootstrap-compass";
+@import "variables";
+@import "bootstrap";
+@import "globals";
+// page elements
+@import "wp_pages";
+@import "navbar";
+@import "footer";
+@import "images";
+@import "sidebar";
+@import "search";
+@import "jetpack";
+@import "wp_taxonomies";
+@import "wp_front_page";
+@import "sections";
+// Cookie EU Law
+@import "cookie";

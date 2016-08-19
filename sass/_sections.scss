@@ -1,0 +1,58 @@
+section.gray {
+  
+  background-color: $brand-gray;
+  
+}
+
+.under-jumbotron {
+  
+  margin-top: -2em;
+  padding-top: 2em;
+  
+}
+
+//  three column wide bootstrap marketing circles
+//
+.page-feature-container {
+  
+}
+
+//
+//
+.page-service-marketing-container {
+  
+  margin-top: 2em;
+  
+}
+
+.page-service-marketing-columns {
+  
+  h3 {
+    
+    color: $brand-warning;
+    font-family: $font-family-serif;
+    font-size: $font-size-h4;
+    
+    a {
+      
+      color: $brand-warning;
+      
+      &:hover {
+        
+        color: desaturate($brand-warning, 20%);
+        
+      }
+      
+    }
+    
+  }
+  
+}
+
+.page-marketing-four-columns-container {
+  
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: center;
+  
+}

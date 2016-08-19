@@ -1,0 +1,194 @@
+.navbar {
+  
+  border-radius: 0px;
+  border: none;
+  
+}
+
+.nav-tabs {
+  & > li > a {
+    border: none;
+    margin-right: 0;
+    color: $navbar-default-link-color;
+    @include box-shadow(inset 0 -1px 0 #ddd);
+    @include transition(all 0.2s);
+
+    &:hover {
+      background-color: transparent;
+      @include box-shadow(inset 0 -2px 0 $brand-primary);
+      color: $brand-primary;
+    }
+  }
+
+  & > li.active > a {
+    border: none;
+    @include box-shadow(inset 0 -2px 0 $brand-primary);
+    color: $brand-primary;
+
+    &:hover {
+      border: none;
+      color: $brand-primary;
+    }
+  }
+
+  & > li.disabled > a {
+    @include box-shadow(inset 0 -1px 0 #ddd);
+  }
+
+  &.nav-justified {
+
+    & > li > a,
+    & > li > a:hover,
+    & > .active > a,
+    & > .active > a:hover {
+      border: none;
+    }
+  }
+
+  .dropdown-menu {
+    margin-top: 0;
+  }
+}
+
+.dropdown-menu {
+  border: none;
+  @include box-shadow(0 1px 4px rgba(0,0,0,.3));
+}
+
+.navbar-nav > li > a {
+  
+    padding-top: 10.5px;
+    padding-bottom: 10.5px;
+  
+}
+
+.navbar-collapse {
+  
+  padding-left: 0px;
+  
+}
+
+.nav-controls {
+  
+  margin-bottom: 15px;
+  
+}
+
+.nav-list-spacer {
+  
+  margin-top: 20px;
+  
+}
+
+#site-header {
+  
+  background-color: $brand-primary;
+  
+}
+
+// STH ICON AND LOGO CSS  
+
+.five-sth-icons {
+  
+  margin-left: -10px;
+  
+}
+
+.sth-logo {
+  
+  padding: 1em;
+  max-width: 100%;
+  margin-right: -10px;
+  
+}
+
+.navbar-brand {
+  
+  padding: 22px 15px;
+  height: inherit;
+  
+}
+
+.navbar-toggle {
+  
+  float: left;
+  margin-left: 15px;
+  margin-right: 0px;
+  
+}
+
+// RESPONSIVE NAVBAR
+
+.navbar-brand {
+  
+  @media screen and (max-width: $screen-xs) {
+    
+    font-size: 13px;
+    line-height: 0px;
+    
+  }
+}
+
+// RESPONSIVE NAVBAR LIST
+
+.navbar-nav {
+  
+  @media screen and (max-width: $screen-xs) {
+    
+    margin-left: 0px;
+    
+  }
+  
+}
+
+// Previous / Next buttons
+//
+//
+//
+
+nav.navigation {
+  
+  .nav-links {
+      
+    padding-left: 0;
+    margin: 22px 0;
+    list-style: none;
+    text-align: center;
+    
+  }
+  
+  .nav-previous {
+    
+    display: inline;
+    
+    a {
+      
+      display: inline-block;
+      padding: 5px 14px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      float: left;
+      
+    }
+    
+  }
+  
+  .nav-next {
+    
+    display: inline;
+    
+    a {
+      
+      display: inline-block;
+      padding: 5px 14px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      float: right;
+      
+    }
+    
+  }
+  
+}

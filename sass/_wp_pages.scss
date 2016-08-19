@@ -1,0 +1,124 @@
+.page-feature-block {
+  
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 4em;
+  
+}
+
+.front-page-featured-reasons {
+  
+  margin-top: 2em;
+  margin-bottom: 4em;
+  
+  .media {
+    
+    padding: 2em 0;
+    
+  }
+  
+}
+
+.front-page-sponsors {
+  
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 4em;
+  
+  h2 {
+    
+    margin-bottom: 2em;
+    
+  }
+  
+}
+
+// PAGE HEADER
+
+.entry-title {
+    
+  border-bottom: solid 5px desaturate($brand-primary, 5%);
+  padding: 10px 0;
+  color: $brand-primary;
+  
+  a {
+    
+    color: $brand-primary;
+    
+    &:hover {
+      
+      color: darken($brand-primary, 5%);
+      
+    }
+    
+  }
+    
+}
+
+// BREADCRUMBS
+
+.breadcrumb-container {
+  
+  background-color: $brand-gray;
+  margin-top: -24px;
+  padding-top: 1.5em;
+  
+}
+
+.breadcrumb {
+  
+  font-weight: 700;
+  padding-left: 0;
+  
+}
+
+// CATEGORY.PHP
+
+.category-title {
+
+  padding-top: 20px;
+  font-size: 20px;
+  margin-top: 0;
+  
+}
+
+.category-article {
+  
+  margin: 1em 0;
+  border: 1px solid darken( $brand-gray, 5% );
+  padding-right: 5px;
+  
+  img {
+    
+    border-left: 5px solid desaturate( $brand-primary, 5% );
+    
+  }
+  
+  // REMOVE ENTRY FOOTER BORDER IN CATEGORY CARD
+  
+  .entry-footer {
+    
+    border: none;
+    padding: 0;
+    margin: 0;
+    
+    .entry-meta {
+    
+      font-size: 12px;
+
+    }
+    
+  }
+  
+}
+
+// ENTRY FOOTER
+
+.entry-footer {
+  
+  // border-top: 1px solid darken( $brand-gray, 5% );
+  border-top: none;
+  padding-top: 1em;
+  margin-top: 1em;
+  
+}
