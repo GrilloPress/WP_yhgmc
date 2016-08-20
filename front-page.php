@@ -12,14 +12,17 @@
  */
 get_header(); ?>
 
-<section class="jumbotron" style="background-image: url('https://almanac-electra.codio.io/wordpress/wp-content/themes/WP_yhgmc/images/YHGMC_header.png')">
+<section class="jumbotron" style="background-image: url('<?php echo CFS()->get( 'jumbotron_img' );?>')">
    <div class="container">
      <div class="col-md-12">
-       <h1>Yorkshire &amp; Humber Genomic Medicine Centre</h1>
+       <h1><?php echo CFS()->get( 'jumbotron_title' );?></h1>
        <p>
-         <a role="button" class="btn btn-warning">A link here</a>
-         <a role="button" class="btn btn-info">A link here</a>
+        <?php echo CFS()->get( 'jumbotron_subtitle' );?>
        </p>
+       <p>
+         <?php $jbo_link = CFS()->get( 'jumbotron_btn' );?>
+         <a class="btn btn-warning btn-lg" href="<?php echo $jbo_link["url"];?>" title="<?php echo $jbo_link["text"];?>" target="<?php echo $jbo_link["target"];?>" role="button"><?php echo $jbo_link["text"];?></a>
+      </p>
      </div>  
   </div>
 </section>
