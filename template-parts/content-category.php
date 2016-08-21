@@ -10,14 +10,14 @@
   
     <div class="col-md-4 col-sm-4 col-xs-4">
       <?php if ( has_post_thumbnail() ) :?>
-            <a href="<?php the_permalink() ;?>">
-              <?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive img-full')); ?>
-            </a>
-          <?php else :?>
-          <a href="<?php the_permalink() ;?>">
-            <img class="img-responsive img-full" src="<?php echo get_template_directory_uri() . "/images/news-square.jpg"; ?>" alt="News">
-          </a>
-          <?php endif ;?>
+        <a href="<?php the_permalink() ;?>">
+          <?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive img-full')); ?>
+        </a>
+      <?php else :?>
+        <a href="<?php the_permalink() ;?>">
+          <img class="img-responsive img-full" src="<?php echo get_template_directory_uri() . "/images/hex_primary_small.png"; ?>" alt="News">
+        </a>
+      <?php endif ;?>
     </div>
 
     <div class="col-md-8 col-sm-8">
