@@ -15,7 +15,7 @@
         </a>
       <?php else :?>
         <a href="<?php the_permalink() ;?>">
-          <img class="img-responsive img-full" src="<?php echo get_template_directory_uri() . "/images/hex_primary_small.png"; ?>" alt="News">
+          <img class="img-responsive img-full" src="<?php echo get_template_directory_uri() . "/images/hex_info_small.png"; ?>" alt="News">
         </a>
       <?php endif ;?>
     </div>
