@@ -56,3 +56,51 @@ section.gray {
   text-align: center;
   
 }
+
+// featurettes
+
+.page-featurette-section {
+  
+  margin: 1em 0;
+  padding: 3em 0;
+  
+  h2 {
+    
+    color: $brand-primary;
+    text-align: center;
+    
+  }
+  
+  hr {
+    
+    border-top: none;
+    border-bottom: 5px solid;
+    color: $brand-primary;
+    
+  }
+  
+  h3 {
+    
+    font-size: 40px;
+    
+  }
+  
+  img {
+    
+    margin-bottom: 10px;
+    
+  }
+  
+  .page-featurette-section-inner {
+    
+    margin-bottom: 1em;
+    
+    p {
+      
+      font-size: 32px;
+      
+    }
+    
+  }
+  
+}
