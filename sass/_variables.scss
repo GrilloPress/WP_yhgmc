@@ -7,6 +7,10 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
+$gray-base:              #00171E;
+$gray-darker:            darken($gray-base, 1%); // #222
+$gray-dark:              darken($gray-base, 2%)  ; // #333
+
 // $gray-base:              #000
 // $gray-darker:            lighten($gray-base, 13.5%) // #222
 // $gray-dark:              lighten($gray-base, 20%)   // #333
@@ -174,7 +178,7 @@ $border-radius-small:       0;
 // $btn-info-bg:                    $brand-info
 // $btn-info-border:                darken($btn-info-bg, 5%)
 
-// $btn-warning-color:              #fff
+$btn-warning-color:              $gray-dark;
 // $btn-warning-bg:                 $brand-warning
 // $btn-warning-border:             darken($btn-warning-bg, 5%)
 
