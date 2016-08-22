@@ -158,10 +158,8 @@ foreach ( $featurettes as $featurette ) { ?>
 
 <section class="page-marketing-four-columns-container">
   <div class="container">
-    <div class="row">
-      
-      <h2></h2>
-      
+    
+    <div class="row">      
       <?php
       $marketing_blocks = array("one", "two", "three", "four");
       foreach ($marketing_blocks as $mb) { ;?>
@@ -196,6 +194,7 @@ foreach ( $featurettes as $featurette ) { ?>
       </div>
       <?php } reset($marketing_blocks);?>
     </div>
+    
   </div>
 </section>
 
