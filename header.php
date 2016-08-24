@@ -47,7 +47,7 @@
           <div class="row">
             <div class="col-md-12">
               <a class="navbar-brand hidden-xs" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
-              <a href="http://www.sth.nhs.uk" target="_blank" title="Sheffield Teaching Hospitals NHS Foundation Trust">
+              <a title="<?php bloginfo('name'); ?>" href="<?php echo home_url(); ?>">
                 <img class="sth-logo pull-right" width="250" src="<?php echo get_template_directory_uri() . "/images/yhgmc_logo.png"; ?>">
               </a>
             </div>
