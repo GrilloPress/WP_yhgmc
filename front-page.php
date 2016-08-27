@@ -208,9 +208,10 @@ foreach ( $featurettes as $featurette ) { ?>
           $category_id = get_cat_ID( 'news' );
           $category_link = get_category_link( $category_id );
         ?>
-        <div class="additional-posts-link">
-          <a href="<?php echo esc_url( $category_link ); ?>" title="News Category">Read more ...</a>
-        </div>
+        
+        <hr>
+        <a class="btn btn-block btn-wire" href="<?php echo esc_url( $category_link ); ?>" title="News Category">Read more ...</a>
+
         
         <?php else : ?>
           <p><?php _e( 'Please write a post...' ); ?></p>
@@ -266,9 +267,10 @@ foreach ( $featurettes as $featurette ) { ?>
           $category_id = get_cat_ID( 'news' );
           $category_link = get_category_link( $category_id );
         ?>
-        <div class="additional-posts-link">
-          <a href="<?php echo esc_url( $category_link ); ?>" title="News Category">Read more ...</a>
-        </div>
+
+        <hr>
+        <a role="button" class="btn btn-block btn-wire" href="<?php echo esc_url( $category_link ); ?>" title="News Category">Read more ...</a>
+
 
         <?php else : ?>
           <p><?php _e( 'Please write a post...' ); ?></p>

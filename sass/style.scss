@@ -7,9 +7,11 @@ Author: Andrew Duckworth
 Author URI: https://github.com/GrilloPress
 */
 @import "bootstrap-compass";
+// general elements
 @import "variables";
 @import "bootstrap";
 @import "globals";
+@import "buttons";
 // page elements
 @import "wp_pages";
 @import "navbar";
