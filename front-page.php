@@ -156,7 +156,7 @@ foreach ( $featurettes as $featurette ) { ?>
   </div>
 </section>
 
-<section>
+<section class="page-category-post-list">
   <div class="container">
     <div class="row">
       
@@ -209,7 +209,6 @@ foreach ( $featurettes as $featurette ) { ?>
           $category_link = get_category_link( $category_id );
         ?>
         
-        <hr>
         <a class="btn btn-block btn-wire" href="<?php echo esc_url( $category_link ); ?>" title="News Category">Read more ...</a>
 
         
@@ -221,12 +220,18 @@ foreach ( $featurettes as $featurette ) { ?>
       
       <div class="col-md-6">
         <?php 
-        // Patient Stories post item category
+        // Right hand column that takes user submitted category to fill the front page feed
+        // 
+        // If no category is provided this posts everything
+        $user_submitted_category = CFS()->get( 'right_column_category' );
+        $user_submitted_category = strtolower( $user_submitted_category );
+        $user_submitted_category = str_replace(' ', '-', $user_submitted_category );
+        
 
         // WP_Query arguments
         $right_col_args = array (
           
-          'category_name' => 'Patient Stories',
+          'category_name' => $user_submitted_category,
           'posts_per_page' => 3
           
         );
@@ -264,12 +269,11 @@ foreach ( $featurettes as $featurette ) { ?>
           <?php wp_reset_postdata(); ?>
         
          <?php
-          $category_id = get_cat_ID( 'news' );
+          $category_id = get_cat_ID( $user_submitted_category );
           $category_link = get_category_link( $category_id );
         ?>
 
-        <hr>
-        <a role="button" class="btn btn-block btn-wire" href="<?php echo esc_url( $category_link ); ?>" title="News Category">Read more ...</a>
+        <a role="button" class="btn btn-block btn-wire" href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $user_submitted_category;?> Category">Read more ...</a>
 
 
         <?php else : ?>
