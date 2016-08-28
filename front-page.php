@@ -222,7 +222,7 @@ foreach ( $featurettes as $featurette ) { ?>
         <?php 
         // Right hand column that takes user submitted category to fill the front page feed
         // 
-        // If no category is provided this posts everything
+        // If no category is provided this posts everything that is a post...
         $user_submitted_category = CFS()->get( 'right_column_category' );
         $cleaned_user_submitted_category = strtolower( $user_submitted_category );
         $cleaned_user_submitted_category = str_replace(' ', '-', $cleaned_user_submitted_category );
