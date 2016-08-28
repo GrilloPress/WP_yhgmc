@@ -224,8 +224,8 @@ foreach ( $featurettes as $featurette ) { ?>
         // 
         // If no category is provided this posts everything
         $user_submitted_category = CFS()->get( 'right_column_category' );
-        $user_submitted_category = strtolower( $user_submitted_category );
-        $user_submitted_category = str_replace(' ', '-', $user_submitted_category );
+        $cleaned_user_submitted_category = strtolower( $user_submitted_category );
+        $cleaned_user_submitted_category = str_replace(' ', '-', $cleaned_user_submitted_category );
         
 
         // WP_Query arguments
