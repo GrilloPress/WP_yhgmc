@@ -59,49 +59,51 @@ get_header(); ?>
   </div>
 </section>
 
-<?php
-$featurettes = CFS()->get( 'featurette_sections' );
-foreach ( $featurettes as $featurette ) { ?>
+<?php // Section that publishes a loop of featurettes starting with a conditional if a conditional is set to published in the WP admin
+$featurette_published = CFS()->get( 'featurette_published' );
+if ( $featurette_published ) {
+  $featurettes = CFS()->get( 'featurette_sections' );
+  foreach ( $featurettes as $featurette ) { ?>
 
+    <section class="page-featurette-section">
+      <div class="container">
 
-  <section class="page-featurette-section">
-    <div class="container">
-      
-      <div class="row">
-        <div class="col-md-offset-2 col-md-8">
-          <h2><?php echo $featurette['featurette_header'];?></h2>
-          <hr>
-        </div>
-      </div>
-      
-      <?php // Featurette inner loop start
-      $featurette_inners = $featurette['featurette_inner'];
-      foreach ( $featurette_inners as $featurette_inner ) { ?>
-      
-      <div class="col-md-12">
-        <div class="page-featurette-section-inner">
-          <div class="row">
-            <div class="col-md-12">
-              <h3><?php echo $featurette_inner['featurette_card_header'];?></h3>
-            </div>
+        <div class="row">
+          <div class="col-md-offset-2 col-md-8">
+            <h2><?php echo $featurette['featurette_header'];?></h2>
+            <hr>
           </div>
-
-          <div class="row">
-            <div class="col-md-4">
-              <?php $featurette_image_id = $featurette_inner[ 'featurette_card_image' ];
-              echo wp_get_attachment_image( $featurette_image_id, 'large', "", array( "class" => "img-marketing" ) );?>
-            </div>
-            <div class="col-md-8">
-              <?php echo $featurette_inner['featurette_card_body'];?>
-            </div>
-          </div> 
         </div>
-      </div>     
-      <?php };?>
-      
-    </div>
-  </section>
-<?php };?>
+
+        <?php // Featurette inner loop start
+        $featurette_inners = $featurette['featurette_inner'];
+        foreach ( $featurette_inners as $featurette_inner ) { ?>
+
+        <div class="col-md-12">
+          <div class="page-featurette-section-inner">
+            <div class="row">
+              <div class="col-md-12">
+                <h3><?php echo $featurette_inner['featurette_card_header'];?></h3>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <?php $featurette_image_id = $featurette_inner[ 'featurette_card_image' ];
+                echo wp_get_attachment_image( $featurette_image_id, 'large', "", array( "class" => "img-marketing" ) );?>
+              </div>
+              <div class="col-md-8">
+                <?php echo $featurette_inner['featurette_card_body'];?>
+              </div>
+            </div> 
+          </div>
+        </div>     
+        <?php };?>
+
+      </div>
+    </section>
+  <?php };
+};?>
 
 <section id="primary" class="page-service-marketing-container">
   <div class="container">
@@ -220,65 +222,76 @@ foreach ( $featurettes as $featurette ) { ?>
       
       <div class="col-md-6">
         <?php 
-        // Right hand column that takes user submitted category to fill the front page feed
-        // 
-        // If no category is provided this posts everything that is a post...
-        $user_submitted_category = CFS()->get( 'right_column_category' );
-        $cleaned_user_submitted_category = strtolower( $user_submitted_category );
-        $cleaned_user_submitted_category = str_replace(' ', '-', $cleaned_user_submitted_category );
+        $category_published = CFS()->get( 'add_additional_category' );
+        if ( $category_published ) :?>
         
+           <?php
+          // Right hand column that takes user submitted category to fill the front page feed
+          // 
+          // If no category is provided this posts everything that is a post...
 
-        // WP_Query arguments
-        $right_col_args = array (
-          
-          'category_name' => $user_submitted_category,
-          'posts_per_page' => 3
-          
-        );
-   
-        // the query
-        $cat_query_right = new WP_Query( $right_col_args ); ?>
+          $user_submitted_category = CFS()->get( 'right_column_category' );
+          $cleaned_user_submitted_category = strtolower( $user_submitted_category );
+          $cleaned_user_submitted_category = str_replace(' ', '-', $cleaned_user_submitted_category );
 
-        <?php if ( $cat_query_right->have_posts() ) : ?>
 
-          <!-- the loop -->
-          <?php while ( $cat_query_right->have_posts() ) : $cat_query_right->the_post(); ?>
-          <div class="row">
-            
-            <div class="col-md-4 col-sm-4 col-xs-4">
-              <?php if ( has_post_thumbnail() ) :?>
-                <a href="<?php the_permalink() ;?>">
-                  <?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive img-full')); ?>
-                </a>
-              <?php else :?>
-                <a href="<?php the_permalink() ;?>">
-                  <img class="img-responsive img-full" src="<?php echo get_template_directory_uri() . "/images/hex_info_small.png"; ?>" alt="News">
-                </a>
-              <?php endif ;?>
+          // WP_Query arguments
+          $right_col_args = array (
+
+            'category_name' => $user_submitted_category,
+            'posts_per_page' => 3
+
+          );
+
+          // the query
+          $cat_query_right = new WP_Query( $right_col_args ); ?>
+
+          <?php if ( $cat_query_right->have_posts() ) : ?>
+
+            <!-- the loop -->
+            <?php while ( $cat_query_right->have_posts() ) : $cat_query_right->the_post(); ?>
+            <div class="row">
+
+              <div class="col-md-4 col-sm-4 col-xs-4">
+                <?php if ( has_post_thumbnail() ) :?>
+                  <a href="<?php the_permalink() ;?>">
+                    <?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive img-full')); ?>
+                  </a>
+                <?php else :?>
+                  <a href="<?php the_permalink() ;?>">
+                    <img class="img-responsive img-full" src="<?php echo get_template_directory_uri() . "/images/hex_info_small.png"; ?>" alt="News">
+                  </a>
+                <?php endif ;?>
+              </div>
+
+              <div class="col-md-8">
+                <?php the_title( sprintf( '<h3 class="category-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+                <?php the_excerpt(); ?>
+              </div>
+
             </div>
-            
-            <div class="col-md-8">
-              <?php the_title( sprintf( '<h3 class="category-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
-              <?php the_excerpt(); ?>
-            </div>
-            
-          </div>
-          <?php endwhile; ?>
-          <!-- end of the loop -->
+            <?php endwhile; ?>
+            <!-- end of the loop -->
 
-          <?php wp_reset_postdata(); ?>
+            <?php wp_reset_postdata(); ?>
+
+           <?php
+            $category_id = get_cat_ID( $user_submitted_category );
+            $category_link = get_category_link( $category_id );
+          ?>
+
+          <a role="button" class="btn btn-block btn-wire" href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $user_submitted_category;?> Category">Read more ...</a>
+
+
+          <?php else : ?>
+            <p><?php _e( 'Please write a post in the desired category...' ); ?></p>
+          <?php endif; ?>
         
-         <?php
-          $category_id = get_cat_ID( $user_submitted_category );
-          $category_link = get_category_link( $category_id );
-        ?>
-
-        <a role="button" class="btn btn-block btn-wire" href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $user_submitted_category;?> Category">Read more ...</a>
-
-
         <?php else : ?>
-          <p><?php _e( 'Please write a post...' ); ?></p>
-        <?php endif; ?>
+        
+          <?php get_sidebar(); ?>
+        
+        <?php endif; ?>     
         
       </div>
       
