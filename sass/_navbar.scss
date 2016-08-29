@@ -120,9 +120,10 @@
   
   @media screen and (max-width: $screen-xs) {
     
-    font-size: 13px;
-    line-height: 0px;
-    padding: 24px;
+    font-size: 14px;
+    line-height: 1em;
+    padding: 10px;
+    max-width: 70%;
     
   }
 }
