@@ -187,15 +187,6 @@ add_filter( 'excerpt_length', 'sth_custom_excerpt_length', 999 );
 
 
 
-
-
-
-
-
-
-
-
-
 // Sidebars & Widgetizes Areas
 function sth_register_footer() {
     
