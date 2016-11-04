@@ -11,10 +11,10 @@
  * 
  */
 get_header(); ?>
-
-<section class="jumbotron" style="background-image: url('<?php echo CFS()->get( 'jumbotron_img' );?>')">
-   <div class="container">
-     <div class="col-md-12">
+<div class="container">
+  <div class="col-md-12">
+    <section class="jumbotron" style="background-image: url('<?php echo CFS()->get( 'jumbotron_img' );?>')">
+     
        <h1><?php echo CFS()->get( 'jumbotron_title' );?></h1>
        <p>
         <?php echo CFS()->get( 'jumbotron_subtitle' );?>
@@ -23,11 +23,12 @@ get_header(); ?>
          <?php $jbo_link = CFS()->get( 'jumbotron_btn' );?>
          <a class="btn btn-warning btn-lg" href="<?php echo $jbo_link["url"];?>" title="<?php echo $jbo_link["text"];?>" target="<?php echo $jbo_link["target"];?>" role="button"><?php echo $jbo_link["text"];?></a>
       </p>
-     </div>  
-  </div>
-</section>
 
-<section class="page-feature-container gray under-jumbotron">
+    </section>
+  </div>
+</div>
+
+<section class="page-feature-container">
   <div class="container">
     <div class="row">
       
@@ -162,12 +163,11 @@ if ( $featurette_published ) {
   <div class="container">
     <div class="row">
       
-      <div class="col-md-6">
         <?php 
         // News post item category
         
         // WP_Query arguments
-        $left_col_args = array (
+        $col_args = array (
           
           'category_name' => 'news',
           'posts_per_page' => 3
@@ -175,127 +175,100 @@ if ( $featurette_published ) {
         );
    
         // the query
-        $cat_query_left = new WP_Query( $left_col_args ); ?>
+        $cat_query = new WP_Query( $col_args ); ?>
 
-        <?php if ( $cat_query_left->have_posts() ) : ?>
+        <?php if ( $cat_query->have_posts() ) : ?>
 
           <!-- the loop -->
-          <?php while ( $cat_query_left->have_posts() ) : $cat_query_left->the_post(); ?>
-          <div class="row">
-            
-            <div class="col-md-4 col-sm-4 col-xs-4">
-              <?php if ( has_post_thumbnail() ) :?>
+          <?php while ( $cat_query->have_posts() ) : $cat_query->the_post(); ?>
+          
+        <div class="col-md-4">
+          <div class="page-category-card">
+            <?php if ( has_post_thumbnail() ) :?>
                 <a href="<?php the_permalink() ;?>">
                   <?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive img-full')); ?>
                 </a>
               <?php else :?>
                 <a href="<?php the_permalink() ;?>">
-                  <img class="img-responsive img-full" src="<?php echo get_template_directory_uri() . "/images/hex_info_small.png"; ?>" alt="News">
+                  <img class="img-responsive" src="<?php echo get_template_directory_uri() . "/images/news.jpg"; ?>" alt="News">
                 </a>
               <?php endif ;?>
+
+            <div class="category-label">
+              News
             </div>
-            
-            <div class="col-md-8">
               <?php the_title( sprintf( '<h3 class="category-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
               <?php the_excerpt(); ?>
-            </div>
-            
           </div>
+      </div>
+        
           <?php endwhile; ?>
           <!-- end of the loop -->
 
           <?php wp_reset_postdata(); ?>
         
-        <?php
-          $category_id = get_cat_ID( 'news' );
-          $category_link = get_category_link( $category_id );
-        ?>
-        
-        <a class="btn btn-block btn-wire" href="<?php echo esc_url( $category_link ); ?>" title="News Category">Read more ...</a>
-
         
         <?php else : ?>
           <p><?php _e( 'Please write a post...' ); ?></p>
         <?php endif; ?>
         
+
       </div>
+    
+    <div class="row">
       
-      <div class="col-md-6">
         <?php 
-        $category_published = CFS()->get( 'add_additional_category' );
-        if ( $category_published ) :?>
+        // News post item category
         
-           <?php
-          // Right hand column that takes user submitted category to fill the front page feed
-          // 
-          // If no category is provided this posts everything that is a post...
+        // WP_Query arguments
+        $col_args = array (
+          
+          'category_name' => 'patient-stories',
+          'posts_per_page' => 3
+          
+        );
+   
+        // the query
+        $cat_query = new WP_Query( $col_args ); ?>
 
-          $user_submitted_category = CFS()->get( 'right_column_category' );
-          $cleaned_user_submitted_category = strtolower( $user_submitted_category );
-          $cleaned_user_submitted_category = str_replace(' ', '-', $cleaned_user_submitted_category );
+        <?php if ( $cat_query->have_posts() ) : ?>
 
-
-          // WP_Query arguments
-          $right_col_args = array (
-
-            'category_name' => $user_submitted_category,
-            'posts_per_page' => 3
-
-          );
-
-          // the query
-          $cat_query_right = new WP_Query( $right_col_args ); ?>
-
-          <?php if ( $cat_query_right->have_posts() ) : ?>
-
-            <!-- the loop -->
-            <?php while ( $cat_query_right->have_posts() ) : $cat_query_right->the_post(); ?>
-            <div class="row">
-
-              <div class="col-md-4 col-sm-4 col-xs-4">
-                <?php if ( has_post_thumbnail() ) :?>
-                  <a href="<?php the_permalink() ;?>">
-                    <?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive img-full')); ?>
-                  </a>
-                <?php else :?>
-                  <a href="<?php the_permalink() ;?>">
-                    <img class="img-responsive img-full" src="<?php echo get_template_directory_uri() . "/images/hex_info_small.png"; ?>" alt="News">
-                  </a>
-                <?php endif ;?>
-              </div>
-
-              <div class="col-md-8">
-                <?php the_title( sprintf( '<h3 class="category-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
-                <?php the_excerpt(); ?>
-              </div>
-
+          <!-- the loop -->
+          <?php while ( $cat_query->have_posts() ) : $cat_query->the_post(); ?>
+          
+        <div class="col-md-4">
+          <div class="page-category-card">
+            <?php if ( has_post_thumbnail() ) :?>
+                <a href="<?php the_permalink() ;?>">
+                  <?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive img-full')); ?>
+                </a>
+              <?php else :?>
+                <a href="<?php the_permalink() ;?>">
+                  <img class="img-responsive" src="<?php echo get_template_directory_uri() . "/images/news.jpg"; ?>" alt="News">
+                </a>
+              <?php endif ;?>
+            
+            <div class="category-label label-patient-story">
+              Patient Story
             </div>
-            <?php endwhile; ?>
-            <!-- end of the loop -->
 
-            <?php wp_reset_postdata(); ?>
+              <?php the_title( sprintf( '<h3 class="category-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
+              <?php the_excerpt(); ?>
+          </div>
+      </div>
+        
+          <?php endwhile; ?>
+          <!-- end of the loop -->
 
-           <?php
-            $category_id = get_cat_ID( $user_submitted_category );
-            $category_link = get_category_link( $category_id );
-          ?>
-
-          <a role="button" class="btn btn-block btn-wire" href="<?php echo esc_url( $category_link ); ?>" title="<?php echo $user_submitted_category;?> Category">Read more ...</a>
-
-
-          <?php else : ?>
-            <p><?php _e( 'Please write a post in the desired category...' ); ?></p>
-          <?php endif; ?>
+          <?php wp_reset_postdata(); ?>
+        
         
         <?php else : ?>
+          <p><?php _e( 'Please write a post...' ); ?></p>
+        <?php endif; ?>
         
-          <?php get_sidebar(); ?>
-        
-        <?php endif; ?>     
-        
-      </div>
-      
-    </div>
+
+      </div>  
   </div>
 </section>
 

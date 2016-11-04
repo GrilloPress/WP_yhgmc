@@ -2,7 +2,6 @@
   
   @extend .label;
   background-color: lighten($brand-info, 5%);
-  
     
 }
 
@@ -19,3 +18,26 @@ h1.page-title {
     color: #ffffff;
   
 }
+
+.category-label {
+  
+  position: absolute;
+  top: 2em;
+  padding-left: 20px;
+  padding-right: 10px;
+  font-weight: 700;
+  background-color: $brand-primary;
+  color: white;
+  font-size: 1em;
+
+  .label-news {
+    
+  }
+  
+}
+
+.label-patient-story {
+    
+    background-color: $brand-success;
+    
+  }
