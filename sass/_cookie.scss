@@ -1,9 +1,16 @@
 #cookie-law {
   
+  position: fixed;
+  bottom: 0;
+  z-index: 1050;
+  background-color: #eaeaea;
+  width: 100%;
+  border-top: 1px solid darken(#eaeaea, 5%);
+  padding-top: 10px;
+  
   p {
     
     text-align: center;
-    background-color: $brand-gray;
     
   }
   

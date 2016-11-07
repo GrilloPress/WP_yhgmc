@@ -11,7 +11,7 @@ function createDiv(){
     var bodytag = document.getElementsByTagName('body')[0];
     var div = document.createElement('div');
     div.setAttribute('id','cookie-law');
-    div.innerHTML = '<p>We use cookies to make the site simpler. <a href="' + sthft_site.url  + '" target="_blank" rel="nofollow" title="Privacy &amp; Cookies Policy">Find out more about our policy</a>. <a class="close-cookie-banner" href="javascript:void(0);" onclick="removeMe();"><span>X</span></a></p>';    
+    div.innerHTML = '<p>We use cookies to make the site simpler. <a href="' + sthft_site.url  + '" target="_blank" rel="nofollow" title="Privacy &amp; Cookies Policy">Find out more about our policy</a>. <a class="close-cookie-banner" href="javascript:void(0);" onclick="removeMe();"><span> Close X</span></a></p>';    
     // Be advised the Close Banner 'X' link requires jQuery
      
     // bodytag.appendChild(div); // Adds the Cookie Law Banner just before the closing </body> tag
