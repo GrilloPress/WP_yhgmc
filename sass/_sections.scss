@@ -116,3 +116,22 @@ section.gray {
   }
   
 }
+
+.page-cta {
+  
+  padding: 2em 1em;
+  margin-bottom: -2em;
+  background-color: $brand-info;
+  color: white;
+  text-align: center;
+  font-size: 1.3em;
+  margin-top: 2em;
+  
+  a {
+    
+    color: white;
+    text-decoration: underline;
+    
+  }
+  
+}
