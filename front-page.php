@@ -186,7 +186,7 @@ if ( $featurette_published ) {
           <div class="page-category-card">
             <?php if ( has_post_thumbnail() ) :?>
                 <a href="<?php the_permalink() ;?>">
-                  <?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive img-full')); ?>
+                  <?php the_post_thumbnail('medium', array('class' => 'img-responsive img-full')); ?>
                 </a>
               <?php else :?>
                 <a href="<?php the_permalink() ;?>">
@@ -240,7 +240,7 @@ if ( $featurette_published ) {
           <div class="page-category-card">
             <?php if ( has_post_thumbnail() ) :?>
                 <a href="<?php the_permalink() ;?>">
-                  <?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive img-full')); ?>
+                  <?php the_post_thumbnail('medium', array('class' => 'img-responsive img-full')); ?>
                 </a>
               <?php else :?>
                 <a href="<?php the_permalink() ;?>">

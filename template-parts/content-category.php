@@ -8,10 +8,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('category-article'); ?>>
   <div class="row">
   
-    <div class="col-md-3 col-sm-3 col-xs-4">
+    <div class="col-md-3 col-sm-3 col-xs-12">
       <?php if ( has_post_thumbnail() ) :?>
         <a href="<?php the_permalink() ;?>">
-          <?php the_post_thumbnail('thumbnail', array('class' => 'img-responsive img-full')); ?>
+          <?php the_post_thumbnail('medium', array('class' => 'img-responsive img-full')); ?>
         </a>
       <?php else :?>
         <a href="<?php the_permalink() ;?>">
