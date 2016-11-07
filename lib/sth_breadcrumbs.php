@@ -28,7 +28,7 @@ if ( ! function_exists( 'sth_breadcrumbs' ) ) :
       if ( !is_front_page() ) {
 
           // Build the breadcrums
-          echo '<ul id="' . $breadcrums_id . '" class="breadcrumb' . $class . '">';
+          echo '<ul id="' . $breadcrums_id . '" class="breadcrumb ' . $breadcrums_class . '">';
 
           // Home page
           echo '<li class="item-home"><a class="bread-link bread-home" href="' . get_home_url() . '" title="' . $home_title . '">' . $home_title . '</a></li>';

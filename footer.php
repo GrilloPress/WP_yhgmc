@@ -11,6 +11,8 @@
 
     </div><!-- #content -->
 
+<?php get_template_part( 'template-parts/content', 'cta' ); ?>
+
     <footer id="colophon" class="site-footer" role="contentinfo">
       <div class="site-info container">
         <div class="row">
