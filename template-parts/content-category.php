@@ -15,7 +15,13 @@
         </a>
       <?php else :?>
         <a href="<?php the_permalink() ;?>">
-          <img class="img-responsive img-full" src="<?php echo get_template_directory_uri() . "/images/hex_info_small.png"; ?>" alt="News">
+          
+          <?php if ( in_category( 'patient-story' ) ) :?>
+            <img class="img-responsive img-full" src="<?php echo get_template_directory_uri() . "/images/hex_info_small.png"; ?>" alt="Patient Story">
+          <?php else :?>
+            <img class="img-responsive" src="<?php echo get_template_directory_uri() . "/images/news.jpg"; ?>" alt="News">
+          <?php endif ;?>
+          
         </a>
       <?php endif ;?>
     </div>
