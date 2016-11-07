@@ -28,12 +28,18 @@ get_header(); ?>
   </div>
 </div>
 
+<?php
+      $featured_pages_published = CFS()->get( 'feature_published' );
+      
+      
+      if ( $featured_pages_published ) {;?>
 <section class="page-feature-container">
   <div class="container">
     <div class="row">
-      
-      <?php
-      $featured_pages = array("one", "two", "three", "four");
+        
+        <?php
+        
+        $featured_pages = array("one", "two", "three", "four");
       foreach ($featured_pages as $fp) { ;?>
       
       
@@ -55,10 +61,13 @@ get_header(); ?>
         </div>
       </div>
       
-      <?php } reset($featured_pages);?>
+      <?php };?>
+      
+      
     </div>
   </div>
 </section>
+<?php } reset($featured_pages);?>
 
 <?php // Section that publishes a loop of featurettes starting with a conditional if a conditional is set to published in the WP admin
 $featurette_published = CFS()->get( 'featurette_published' );
@@ -274,48 +283,5 @@ if ( $featurette_published ) {
 
   </div>
 </section>
-
-<section class="page-marketing-four-columns-container">
-  <div class="container">
-    
-    <div class="row">      
-      <?php
-      $marketing_blocks = array("one", "two", "three", "four");
-      foreach ($marketing_blocks as $mb) { ;?>
-      
-      <div class="col-md-3 col-sm-6">
-              
-            <?php $marketing_image_id = CFS()->get( 'marketing_image_' . $mb );
-            echo wp_get_attachment_image( $marketing_image_id, array('300', '9999'), "", array( "class" => "img-marketing" ) );?>
-            
-            <h4 class="media-heading"><?php echo CFS()->get('marketing_title_' . $mb); ?></h4>
-            <?php echo CFS()->get('marketing_body_' . $mb); ?>
-
-      </div>
-      
-      <?php } reset($marketing_blocks);?>
-    </div>
-    
-    <div class="row">
-      <?php
-      $marketing_blocks = array("five", "six", "seven", "eight");
-      foreach ($marketing_blocks as $mb) { ;?>
-      
-      <div class="col-md-3 col-sm-6">
-
-
-            <?php $marketing_image_id = CFS()->get( 'marketing_image_' . $mb );
-            echo wp_get_attachment_image( $marketing_image_id, array('300', '9999'), "", array( "class" => "img-marketing" ) );?>
-        
-            <h4 class="media-heading"><?php echo CFS()->get('marketing_title_' . $mb); ?></h4>
-            <?php echo CFS()->get('marketing_body_' . $mb); ?>
-
-      </div>
-      <?php } reset($marketing_blocks);?>
-    </div>
-    
-  </div>
-</section>
-
 
 <?php get_footer(); ?>
