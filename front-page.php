@@ -20,8 +20,9 @@ get_header(); ?>
         <?php echo CFS()->get( 'jumbotron_subtitle' );?>
        </p>
        <p>
-         <?php $jbo_link = CFS()->get( 'jumbotron_btn' );?>
-         <a class="btn btn-warning btn-lg" href="<?php echo $jbo_link["url"];?>" title="<?php echo $jbo_link["text"];?>" target="<?php echo $jbo_link["target"];?>" role="button"><?php echo $jbo_link["text"];?></a>
+        <?php $jbo_link = CFS()->get( 'jumbotron_btn' );?>
+        <a class="btn btn-warning btn-lg" href="<?php echo $jbo_link["url"];?>" title="<?php echo $jbo_link["text"];?>" target="_<?php echo $jbo_link["target"];?>" role="button"><?php echo $jbo_link["text"];?></a>
+        <a href="<?php echo get_permalink( get_page_by_title( 'About us' ) ) ; ?>" title="Learn more about the YHGMC" class="btn btn-primary btn-lg">Learn more</a>
       </p>
 
     </section>
