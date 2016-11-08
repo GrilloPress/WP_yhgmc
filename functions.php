@@ -281,7 +281,7 @@ add_action( 'wp_enqueue_scripts', 'sth_theme_js' );
 wp_enqueue_script( 'cookie', get_template_directory_uri() . '/js/cookie.js' );
 
 $sthft_site = array(
-	'url' => site_url('/cookie-policy')
+	'url' => get_permalink( get_page_by_title( 'Privacy & Cookies' ) )
 );
 
 wp_localize_script( 'cookie', 'sthft_site', $sthft_site );
