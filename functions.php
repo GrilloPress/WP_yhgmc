@@ -129,15 +129,6 @@ function sth_widgets_init() {
 }
 add_action( 'widgets_init', 'sth_widgets_init' );
 
-/**
- * Enqueue scripts and styles.
- */
-function sth_scripts() {
-  
-	wp_enqueue_style( 'sth-style', get_stylesheet_uri() );
-
-}
-add_action( 'wp_enqueue_scripts', 'sth_scripts' );
 
 
 // /////////////////////////////////
@@ -240,6 +231,17 @@ function sth_register_footer() {
   */
 } // don't remove this bracket!
 add_action( 'widgets_init', 'sth_register_footer' );
+
+/**
+ * Enqueue scripts and styles.
+ */
+function sth_scripts() {
+  
+	wp_enqueue_style( 'sth-style', get_stylesheet_uri() );
+
+}
+add_action( 'wp_enqueue_scripts', 'sth_scripts' );
+
 
 // enqueue javascript
 if( !function_exists( "sth_theme_js" ) ) {  

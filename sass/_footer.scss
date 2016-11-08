@@ -1,9 +1,9 @@
 .site-footer {
   
-  background-color: $brand-grey;
+  background-color: darken( $brand-grey, 2.5% );
   padding-top: 2em;
   margin-top: 2em;
-  border-top: 1px solid #e7e7e7;
+  border-top: 1px solid darken( $brand-grey, 5% );
   
   a {
     
