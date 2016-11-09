@@ -36,7 +36,7 @@ function boostrap_media_object( $atts, $content = null ) {
       'id' => '',
     ), $atts );
 
-    return "<div id='" . esc_attr($a['id']) .  "' class='media-" . esc_attr($a['alignment']) . "" . esc_attr($a['valignment']) .  " " . esc_attr($a['class']) . "'>" . wp_kses_post($content) ."</div>";
+    return "<div id='" . esc_attr($a['id']) .  "' class='media-" . esc_attr($a['alignment']) . " media-" . esc_attr($a['valignment']) .  " " . esc_attr($a['class']) . "'>" . wp_kses_post($content) ."</div>";
 }
 add_shortcode( 'media-object', 'boostrap_media_object' );
 
