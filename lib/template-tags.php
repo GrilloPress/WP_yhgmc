@@ -161,6 +161,9 @@ function the_archive_description( $before = '', $after = '' ) {
 }
 endif;
 
+// Enable shortcodes in text widgets
+add_filter('widget_text', 'do_shortcode'); 
+
 /**
  * Returns true if a blog has more than 1 category.
  *
