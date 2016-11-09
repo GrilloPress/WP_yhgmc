@@ -119,6 +119,12 @@
   height: inherit;
   font-weight: 700;
   
+  @media screen and (max-width: $screen-sm) {
+    
+    font-size: $font-size-base;
+    
+  }
+  
   @media screen and (max-width: $screen-xs) {
     
     font-size: 14px;
