@@ -3,7 +3,8 @@
 /*
  * To change this template use Tools | Templates.
  */
-?>
+$marketing_blocks_published = CFS()->get( 'marketing_block_published' );
+if ( $marketing_blocks_published ) {;?>
 <section class="page-marketing-four-columns-container">
   <div class="container">
     <div class="row">
@@ -45,3 +46,4 @@
     </div>
   </div>
 </section>
+<?php };?>

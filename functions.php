@@ -269,23 +269,18 @@ if( !function_exists( "sth_theme_js" ) ) {
     wp_enqueue_script( 'bootstrap' );
     wp_enqueue_script( 'app-js' );
     wp_enqueue_script( 'modernizr' );
+    // Add EU cookie to site. JS code set out in cookie.js.  
+    wp_enqueue_script( 'cookie', get_template_directory_uri() . '/js/cookie.js' );
+
+    $sthft_site = array(
+      'url' => get_permalink( get_page_by_title( 'Privacy & Cookies' ) )
+    );
+
+    wp_localize_script( 'cookie', 'sthft_site', $sthft_site );
     
   }
 }
 add_action( 'wp_enqueue_scripts', 'sth_theme_js' );
-
-
-
-// Add EU cookie to site. JS code set out in cookie.js.  
-
-wp_enqueue_script( 'cookie', get_template_directory_uri() . '/js/cookie.js' );
-
-$sthft_site = array(
-	'url' => get_permalink( get_page_by_title( 'Privacy & Cookies' ) )
-);
-
-wp_localize_script( 'cookie', 'sthft_site', $sthft_site );
-wp_enqueue_script( 'cookie' );
 
 /**
  * Remove Jetpack Form CSS

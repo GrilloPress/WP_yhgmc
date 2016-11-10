@@ -30,17 +30,15 @@ get_header(); ?>
 </div>
 
 <?php
-      $featured_pages_published = CFS()->get( 'feature_published' );
-      
-      
-      if ( $featured_pages_published ) {;?>
+$featured_pages_published = CFS()->get( 'feature_published' );
+if ( $featured_pages_published ) {;?>
 <section class="page-feature-container">
   <div class="container">
     <div class="row">
         
         <?php
         
-        $featured_pages = array("one", "two", "three", "four");
+      $featured_pages = array("one", "two", "three", "four");
       foreach ($featured_pages as $fp) { ;?>
       
       
@@ -62,13 +60,13 @@ get_header(); ?>
         </div>
       </div>
       
-      <?php };?>
+      <?php } reset($featured_pages);?>
       
       
     </div>
   </div>
 </section>
-<?php } reset($featured_pages);?>
+<?php };?>
 
 <?php // Section that publishes a loop of featurettes starting with a conditional if a conditional is set to published in the WP admin
 $featurette_published = CFS()->get( 'featurette_published' );
