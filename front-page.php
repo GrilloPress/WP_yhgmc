@@ -13,7 +13,11 @@
 get_header(); ?>
 <div class="container">
   <div class="col-md-12">
-    <section class="jumbotron" style="background-image: url('<?php echo CFS()->get( 'jumbotron_img' );?>')">
+    <section class="jumbotron" 
+             <?php if (!empty(CFS()->get( 'jumbotron_img' ))) :?>
+             style="background-image: url('<?php echo CFS()->get( 'jumbotron_img' );?>')"
+             <?php endif ;?>
+             >
      
        <h1><?php echo CFS()->get( 'jumbotron_title' );?></h1>
        <p>
