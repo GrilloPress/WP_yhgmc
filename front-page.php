@@ -84,7 +84,6 @@ if ( $featurette_published ) {
         <div class="row">
           <div class="col-md-offset-2 col-md-8">
             <h2><?php echo $featurette['featurette_header'];?></h2>
-            <hr>
           </div>
         </div>
 
